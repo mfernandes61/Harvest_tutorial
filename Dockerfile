@@ -15,7 +15,8 @@ RUN \
 	add-apt-repository  "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" && \
 	add-apt-repository  "deb http://cran.ma.imperial.ac.uk/bin/linux/ubuntu trusty/"
 
-RUN apt-get update && apt-get install -y wget git unzip gzip tar chromium-browser && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
+ RUN apt-get update && apt-get install -y wget git unzip gzip tar xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic && \
+        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 RUN mkdir /harvest && cd /harvest && wget https://github.com/marbl/harvest/releases/download/v1.1.2/Harvest-Linux64-v1.1.2.tar.gz
 RUN tar -xvf /harvest/*.tar.gz
 RUN mkdir /scripts && mkdir /home/ubuntu /home/ubuntu/.config /home/ubuntu/.config/autostart
