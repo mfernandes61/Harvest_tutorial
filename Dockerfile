@@ -19,6 +19,7 @@ RUN \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 RUN mkdir /harvest && cd /harvest && wget https://github.com/marbl/harvest/releases/download/v1.1.2/Harvest-Linux64-v1.1.2.tar.gz
 RUN tar -xvf /harvest/*.tar.gz
+RUN ln -s /root/Harvest-Linux64-v1.1.2/* /usr/local/bin/
 RUN mkdir /scripts && mkdir /home/ubuntu /home/ubuntu/.config /home/ubuntu/.config/autostart
 # ADD /scripts/* /scripts/
 # ADD /autostarts/.desktop /home/ubuntu/.config/autostart/.desktop
